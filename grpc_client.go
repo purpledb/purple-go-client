@@ -223,9 +223,5 @@ func (c *GrpcClient) SetRemove(set, item string) ([]string, error) {
 		return nil, err
 	}
 
-	if s.Items == nil {
-		s.Items = []string{}
-	}
-
 	return s.Items, nil
 }
