@@ -131,11 +131,26 @@ func (c *HttpClient) CounterGet(key string) (int64, error) {
 	return val.Value, nil
 }
 
+type counterResponse struct {
+	Counter string `json:"counter"`
+	Value   int64  `json:"value"`
+}
+
 func int64ToString(i int64) string {
 	return strconv.FormatInt(i, 10)
 }
 
-func (c *HttpClient) CounterIncrement(key string, increment int64) error {
+func jsonToCounter(bs []byte) (int64, error) {
+	var c counterResponse
+
+	if err := json.Unmarshal(bs, &c); err != nil {
+		return 0, err
+	}
+
+	return c.Value, nil
+}
+
+func (c *HttpClient) CounterIncrement(key string, increment int64) (int64, error) {
 	url := c.counterKeyUrl(key)
 
 	s := int64ToString(increment)
@@ -145,14 +160,14 @@ func (c *HttpClient) CounterIncrement(key string, increment int64) error {
 		Put(url)
 
 	if err != nil {
-		return err
+		return 0, err
 	}
 
 	if res.StatusCode() != http.StatusNoContent {
-		return fmt.Errorf("expected status code 204, got %d", res.StatusCode())
+		return 0, fmt.Errorf("expected status code 204, got %d", res.StatusCode())
 	}
 
-	return nil
+	return jsonToCounter(res.Body())
 }
 
 // Flag operations

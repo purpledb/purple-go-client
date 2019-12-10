@@ -34,9 +34,12 @@ func main() {
 	// Counter
 	counter, increment := "player1-score", int64(2500)
 
-	if err := client.CounterIncrement(counter, increment); err != nil {
+	count, err := client.CounterIncrement(counter, increment)
+	if err != nil {
 		log.Fatal(err)
 	}
+
+	fmt.Println("New counter value after increment:", count)
 
 	fetchedValue, err := client.CounterGet(counter)
 	if err != nil {

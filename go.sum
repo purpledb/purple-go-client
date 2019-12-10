@@ -48,8 +48,8 @@ github.com/pelletier/go-toml v1.2.0/go.mod h1:5z9KED0ma1S8pY6P1sdut58dfprrGBbd/9
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
-github.com/purpledb/purple v0.1.4 h1:cSbCKMsDE8B1fCyq0TsoWpy9J/wIflEba9onISapN3Q=
-github.com/purpledb/purple v0.1.4/go.mod h1:S7vl7j+EotxyDUxrPUUD8Z0HiPCaeF/rGh6a7WIn8XM=
+github.com/purpledb/purple v0.1.6 h1:u+FufLjzlZLYuhBseo0wZ6157yGaQg0FMYWrMctWjcI=
+github.com/purpledb/purple v0.1.6/go.mod h1:5IBT97+F3ej8FCiQCv5aLlnsOkW0YC3qX74zwS0wYX8=
 github.com/russross/blackfriday v1.5.2/go.mod h1:JO/DiYxRf+HjHt06OyowR9PTA263kcR/rfWxYHBV53g=
 github.com/sirupsen/logrus v1.4.2/go.mod h1:tLMulIdttU9McNUspp0xgXVQah82FyeX6MwdIuYE2rE=
 github.com/spf13/afero v1.1.2/go.mod h1:j4pytiNVoe2o6bmDsKpLACNPDBIoEAkihy7loJ1B0CQ=

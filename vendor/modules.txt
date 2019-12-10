@@ -10,7 +10,7 @@ github.com/golang/protobuf/ptypes/duration
 github.com/golang/protobuf/ptypes/timestamp
 # github.com/pmezard/go-difflib v1.0.0
 github.com/pmezard/go-difflib/difflib
-# github.com/purpledb/purple v0.1.4
+# github.com/purpledb/purple v0.1.6
 github.com/purpledb/purple/proto
 github.com/purpledb/purple/services/cache
 github.com/purpledb/purple/services/counter

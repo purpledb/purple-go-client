@@ -100,7 +100,7 @@ func (c *GrpcClient) CounterGet(key string) (int64, error) {
 		Key: key,
 	}
 
-	res, err := c.counterClient.GetCounter(c.ctx, req)
+	res, err := c.counterClient.CounterGet(c.ctx, req)
 	if err != nil {
 		return 0, err
 	}
@@ -108,17 +108,18 @@ func (c *GrpcClient) CounterGet(key string) (int64, error) {
 	return res.Value, nil
 }
 
-func (c *GrpcClient) CounterIncrement(key string, amount int64) error {
+func (c *GrpcClient) CounterIncrement(key string, amount int64) (int64, error) {
 	req := &proto.IncrementCounterRequest{
 		Key:    key,
 		Amount: amount,
 	}
 
-	if _, err := c.counterClient.IncrementCounter(c.ctx, req); err != nil {
-		return err
+	res, err := c.counterClient.CounterIncrement(c.ctx, req)
+	if err != nil {
+		return 0, err
 	}
 
-	return nil
+	return res.Value, nil
 }
 
 // KV
